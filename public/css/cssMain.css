@@ -5,21 +5,35 @@
     background: #1f2937;
 }
 
+.Comp-title {
+    background-color: rgb(31 41 55);
+    padding: 10px;
+}
+
+.competences {
+    width: 50%;
+    height: auto;
+}
+
+.progressBar {
+    padding: 15px;
+}
+
+.spheriComp {
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+
+.Sphere {
+    display: inline-block;
+}
+
 .timeline {
     width: 100%;
     height: 1500px;
     position: relative;
     padding: 80px 0 250px 0;
-}
-
-.test {
-    background: #5eb5e0;
-}
-.test2 {
-    background: #B0413E;
-}
-.test3 {
-    background: blue;
 }
 
 .rond {
@@ -106,6 +120,21 @@
     }
 
     .box {
-        left: calc(50% - 50px);
+        left: calc(50% - 250px);
+    }
+
+    .competences {
+        display: flex;
+    }
+
+    .progressBar {
+        width: 100%;
+        display: flex;
+    }
+
+    .spheriComp {
+        display: flex;
+        width: 100%;
     }
 }
+

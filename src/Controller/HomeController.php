@@ -27,7 +27,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/uniwave', name: 'uniwave')]
-    public function encheres(): Response
+    public function uniwave(): Response
     {
         return $this->render('projects/uniwave-3D.html.twig');
     }
