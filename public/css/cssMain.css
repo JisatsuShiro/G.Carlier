@@ -12,11 +12,17 @@
 
 .competences {
     width: 50%;
-    height: auto;
+    min-height: 350px;
+    margin: 10px;
+}
+
+.comp-description{
+    margin-top: 15px;
+    font-size: large;
 }
 
 .progressBar {
-    padding: 15px;
+    min-height: 300px;
 }
 
 .spheriComp {
@@ -60,7 +66,6 @@
 .box {
     color: #333;
     width: 400px;
-    min-height: 200px;
     padding: 20px;
     border-radius: 3px;
     height: auto;
@@ -71,6 +76,10 @@
     transform: translate(-50%);
 }
 
+.b0{
+    top: 80px;
+    left: calc(50% + 70px);
+}
 .b1{
     top: 80px;
     left: calc(50% - 470px);
@@ -107,6 +116,10 @@
     opacity: 1;
     transform: translateY(0);
     transition: 1s cubic-bezier(.5, 0, 0, 1);
+}
+
+.comp-description {
+
 }
 
 @media screen and (max-width: 1000px) {

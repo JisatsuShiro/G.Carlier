@@ -32,10 +32,10 @@
                 </div>
             </header>
 
-            <section class="bg-white mt-20">
+            <section class="bg-white mt-20 pattern">
                 <div class="max-w-2xl px-6 text-center mx-auto">
                     <h2 class="text-3xl font-semibold text-gray-800">Hi, I’m Guillaume . Nice to meet you.</h2>
-                    <p class="text-gray-600 mt-4">
+                    <p class="text-gray-600 mt-4 text-l font-semibold">
                         Développeur web basé sur Rennes. <br>
                     </p>
 
@@ -51,12 +51,14 @@
 
                     <p class="text-white mt-4">
                         Récemment issu d'une formation de reconversion dans le développement web, je suis à la recherche d'un premier poste. <br>
-                        Je me passionne pour tout ce qui touche au domaine du web 3.0 et des Blockchains.
+                        Je me passionne pour tout ce qui touche au domaine du web 3.0 et des Blockchains.<br>
                         Plutôt orienté Back-End, je prends beaucoup de plaisir a découvrir les possibilités du développement Front-End.
+                        <br>
                         <br>
                         Constemment en quete d'apprentissage et autodidacte, je continue de me former à des technologies telle que le machine learning. <br>
                         Je recherche avant tout un environnement stimulant, me permettant de continuer à apprendre et développer mes compétences.
-                        Ayant peu d'expérience dans ce nouveau domaine, je souhaiterais intégrer une équipe dynamique, animée par le partage des connaissances dans le but d'évoluer ensemble. </br>
+                        <br><br>
+                        Je souhaiterai intégrer une équipe dynamique, animée par le partage des connaissances dans le but d'évoluer ensemble. </br>
                         <br>Motivé et désireux d'apprendre, je peux travailler autant avec des technologies connues (Java, PHP, symfony) que de nouvelles technologies.
                     </p>
                 </div>
@@ -89,18 +91,18 @@
                             <h2 class="text-white">2015 - 2009</h2>
                         </div>
 
+                        <div class="box b0 reveal">
+                            <h2>Master en psycho-criminologie et victimologie</h2>
+                        </div>
                         <div class="box b1 reveal">
                             <h2>Développeur web & web mobile</h2>
                             <p>
                                 Eni école informatique.
-                                Ma formation s'est soldé par la réalisation d'un stage pour <a href="https://landing.uniwave.app/">Uniwave</a>.
+                                Ma formation s'est soldé par la réalisation d'un stage pour <a class="text-blue-600" href="https://landing.uniwave.app/">Uniwave</a>.
                             </p>
                         </div>
                         <div class="box b2 reveal">
                             <h2>Master en psycho-criminologie et victimologie</h2>
-                            <p>
-                                Master 1 en psy
-                            </p>
                         </div>
                         <div class="box b3 reveal">
                             <h2>Médiateur social</h2>
@@ -125,95 +127,204 @@
                 <div class="competences">
                     <!-- component -->
                     <div class="progressBar OVERVIEW">
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
-                            ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                        <p class="comp-description">
+                            <br>
+                            Vous pouvez visualiser mon niveau pour les différentes technologies en cliquant sur la technologie souhaitée sur la spère à droite. -->
                         </p>
                     </div>
 
                     <div class="progressBar AGILE hidden">
                         <span>AGILE</span>
-                        <div class="bg-red-200 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-red-200 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage de la méthode Agile au cours de ma formation de développeur web.
+                            <br>
+                            <br> De formation initiale en psychologie, j'accorde beaucoup d'importance à la
+                            communication (dans l'équipe ou avec le client) qui est selon moi la clef de la réussite d'un projet.
+                            Formé à l'écoute et aux communication groupales, je sais mettre en place les outils nécessaires à la libre expression de tous.
+                        </p>
                     </div>
 
                     <div class="progressBar THREE.JS hidden">
                         <span>THREE.JS</span>
-                        <div class="bg-red-500 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-red-500 text-xs leading-none text-center h-1" style="width: 15%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage en autodidacte de Three.js (en cours).
+                            <br>
+                            <br> Scène, moteur graphique/physique, caméra, lumières, meshes, shaders... bienvenue dans le monde merveilleux de la 3D.
+                            Tout cela est encore du chinois mais n'aura bientot plus de secret pour moi (enfin je l'espère).
+                            Ci-dessous, un "simple" cube que j'ai réalisé.
+
+                        </p>
+
+                        <div id="render">
+
+                            {# intégration du cube #}
+                            <script src="js/three.js"></script>
+                            <script>
+                                const scene = new THREE.Scene();
+                                var rendered = document.getElementById("render");
+                                const camera = new THREE.PerspectiveCamera( 65, 550 / 362, 0.1, 2000 );
+
+                                const renderer = new THREE.WebGLRenderer({ alpha: true });
+
+                                renderer.setSize( 749, 162 );
+                                rendered.appendChild( renderer.domElement );
+
+                                const geometry = new THREE.BoxGeometry();
+                                const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+                                const cube = new THREE.Mesh( geometry, material );
+                                scene.add( cube );
+
+                                camera.position.z = 5;
+
+                                function animate() {
+                                    requestAnimationFrame( animate );
+
+                                    cube.rotation.x += 0.01;
+                                    cube.rotation.y += 0.01;
+
+                                    renderer.render( scene, camera );
+                                };
+                                animate();
+                            </script>
+                        </div>
                     </div>
 
                     <div class="progressBar HTML hidden">
                         <span>HTML</span>
-                        <div class="bg-orange-200 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-orange-200 text-xs leading-none text-center h-1" style="width: 80%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage en autodidacte des bases du HTML via la plateforme OpenClassroom et perfectionnement au cours de ma formation de développeur web..
+                            <br>
+                            <br> La base du développement web. A-t-on vraiment besoin de revenir dessus?
+                        </p>
                     </div>
 
                     <div class="progressBar SQL hidden">
                         <span>SQL</span>
-                        <div class="bg-orange-500 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-orange-500 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage au cours de ma formation de développeur web, j'ai acquis de bonnes connaissances
+                            de ce langage.
+                        </p>
                     </div>
 
                     <div class="progressBar BOOTSTRAP hidden">
                         <span>BOOTSTRAP</span>
-                        <div class="bg-amber-200 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-amber-200 text-xs leading-none text-center h-1" style="width: 65%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage au cours de ma formation de développeur web, je lui préfère TailwindCSS
+                        </p>
                     </div>
 
                     <div class="progressBar PYTHON hidden">
                         <span>PYTHON</span>
-                        <div class="bg-yellow-600 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-yellow-600 text-xs leading-none text-center h-1" style="width: 15%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage en autodidacte, je m'intéresse au Machine Learning et au Data Analysis avec Python.
+                        </p>
                     </div>
 
                     <div class="progressBar API hidden">
                         <span>API</span>
-                        <div class="bg-lime-400 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-lime-400 text-xs leading-none text-center h-1" style="width: 70%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Que serait le web sans API?
+                        </p>
                     </div>
 
                     <div class="progressBar CSS hidden">
                         <span>CSS</span>
-                        <div class="bg-green-300 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-green-300 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage en autodidacte des bases du CSS via la plateforme OpenClassroom et perfectionnement au cours de ma formation de développeur web.
+                            <br>
+                            <br> Comme le HTML, c'est la base du développement web.
+                        </p>
                     </div>
 
                     <div class="progressBar JAVASCRIPT hidden">
                         <span>JAVASCRIPT</span>
-                        <div class="bg-green-800 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-green-800 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Plutot frilleux au début, j'ai appris a apprécier ce langage et m'amuse aujourd'hui a explorer les nombreuses possibilités qu'il offre.
+                        </p>
                     </div>
 
                     <div class="progressBar TAILWIND hidden">
                         <span>TAILWIND</span>
-                        <div class="bg-teal-300 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-teal-300 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage autodidacte dans le cadre de mon stage.
+                            <br>Bien pratique pour rapidement mettre en forme un site.
+                        </p>
                     </div>
 
                     <div class="progressBar GIT hidden">
                         <span>GIT</span>
-                        <div class="bg-cyan-300 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-cyan-300 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            L'indispensable outils du développeur.
+                        </p>
                     </div>
 
                     <div class="progressBar REACT hidden">
                         <span>REACT</span>
-                        <div class="bg-cyan-800 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-cyan-800 text-xs leading-none text-center h-1" style="width: 35%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage autodidacte au cours de mon stage. Je n'ai pas eu l'occasion depuis de le réutiliser.
+                        </p>
                     </div>
 
                     <div class="progressBar ANGULAR hidden">
                         <span>ANGULAR</span>
-                        <div class="bg-sky-400 text-xs leading-none text-center h-1" style="width: 45%"></div>
+                        <div class="bg-sky-400 text-xs leading-none text-center h-1" style="width: 65%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Apprentissage au cours de ma formation de développeur web, j'ai acquis de bonnes connaissances
+                            de ce framework bien que je ne l'utilise pas souvent.
+                        </p>
                     </div>
 
                     <div class="progressBar JAVA hidden">
                         <span>JAVA</span>
-                        <div class="bg-blue-400 text-xs leading-none text-center h-1" style="width: 55%"></div>
+                        <div class="bg-blue-400 text-xs leading-none text-center h-1" style="width: 80%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Mon premier coup de coeur.<br>
+                            A l'issue de ma formation, j'ai intégrer une formation en Java Mulesoft (en cours) débouchant sur un poste de développeur chez CGI.
+                        </p>
                     </div>
 
                     <div class="progressBar SYMFONY hidden">
                         <span>SYMFONY</span>
-                        <div class="bg-blue-800 text-xs leading-none text-center h-1" style="width: 65%"></div>
+                        <div class="bg-blue-800 text-xs leading-none text-center h-1" style="width: 85%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Mon second coup de coeur. J'ai pris beaucoup de plaisir à travailler sur symfony au cours de mon stage.
+                        </p>
                     </div>
 
                     <div class="progressBar PHP hidden">
                         <span>PHP</span>
                         <div class="bg-fuchsia-500 text-xs leading-none text-center h-1" style="width: 75%"></div>
+                        <p class="comp-description">
+                            <br>
+                            Un indispensable.
+                        </p>
                     </div>
                 </div>
 
@@ -261,7 +372,6 @@
                                     progressBar[i].classList.add("hidden");
                                 }
                             }
-
                             //met en pause/resume la rotation
                             if (e.target.className === 'tagcloud--item') {
                                 if (onPause === true) {
@@ -340,7 +450,7 @@
 
                     {# GitHub #}
                     <div class="flex items-center justify-center mt-12">
-                        <a class="flex items-center text-white hover:underline hover:text-gray-200" href="#">
+                        <a class="flex items-center text-white hover:underline hover:text-gray-200" href="https://github.com/JisatsuShiro">
                             <span>View More On Github</span>
 
                             <svg class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -359,29 +469,23 @@
                         </div>
 
                         <div class="flex items-center -mx-2">
-                        {# Twitter #}
-                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="#">
-                                <svg class="h-5 w-5 fill-current" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                                    <path d='M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z'/>
-                                </svg>
-                            </a>
 
                         {# GitHub #}
-                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="#">
+                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="https://github.com/JisatsuShiro">
                                 <svg class="h-5 w-5 fill-current" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
                                     <path d='M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z'/>
                                 </svg>
                             </a>
 
                         {# Facebook #}
-                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="#">
-                                <svg class="h-5 w-5 fill-current" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                                    <path d='M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z'/>
-                                </svg>
-                            </a>
+{#                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="#">#}
+{#                                <svg class="h-5 w-5 fill-current" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>#}
+{#                                    <path d='M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z'/>#}
+{#                                </svg>#}
+{#                            </a>#}
 
                         {# Discord #}
-                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="#">
+                            <a class="flex items-center mx-2 text-gray-600 hover:text-indigo-600" href="kysara#8842">
                                 <svg class="h-5 w-5 fill-current" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
                                     <path d='M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z'/>
                                 </svg>
