@@ -76,12 +76,12 @@
     transform: translate(-50%);
 }
 
-.b0{
-    top: 80px;
+.b0 {
+    top: 10px;
     left: calc(50% + 70px);
 }
 .b1{
-    top: 80px;
+    top: 150px;
     left: calc(50% - 470px);
 }
 .b2{
