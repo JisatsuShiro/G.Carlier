@@ -57,6 +57,10 @@
     font-size: 15px;
 }
 
+.timeline a {
+    color: blue;
+}
+
 .r1{top: 80px;}
 .r2{top: 386px;}
 .r3{top: 692px;}
