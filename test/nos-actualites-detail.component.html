@@ -1,0 +1,30 @@
+<div id="modal-actu">
+  <div class="actu-diapo">
+    <div id="carouselExampleControlsActu" class="carousel slide" data-bs-ride="carouselActu">
+      <div class="carousel-inner">
+        <div *ngFor="let i of images" class="carousel-item" [ngClass]="{'active': i === images[0]}">
+          <img [src]="i"  class="actu-img">
+        </div>
+      </div>
+      <button class="btn btn-carrou-prev shadow-none" type="button" data-bs-target="#carouselExampleControlsActu"
+              data-bs-slide="prev">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="btn btn-carrou-next shadow-none" type="button" data-bs-target="#carouselExampleControlsActu"
+              data-bs-slide="next">
+        <i class="fa-solid fa-arrow-right"></i>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="actu-body">
+    <header> 
+      <span class="actu-date"> {{ date }} </span>
+      <h1 class="actu-titre"> {{ titre }} </h1></header>
+    <section class="actu-text">
+      {{ texte }} 
+    </section>
+  </div>
+  <span class="actu-close"><i class="fas fa-times" (click)="closeModal()"></i></span>
+</div>

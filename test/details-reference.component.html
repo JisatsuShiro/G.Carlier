@@ -1,0 +1,30 @@
+<div id="modal-reference">
+  <div class="reference-diapo">
+    <div id="carouselExampleControlsreference" class="carousel slide" data-bs-ride="carouselreference">
+      <div class="carousel-inner">
+        <div *ngFor="let i of images" class="carousel-item" [ngClass]="{'active': i === images[0]}">
+          <img [src]="i"  class="reference-img">
+        </div>
+      </div>
+      <button class="btn btn-carrou-prev shadow-none" type="button" data-bs-target="#carouselExampleControlsreference"
+              data-bs-slide="prev">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="btn btn-carrou-next shadow-none" type="button" data-bs-target="#carouselExampleControlsreference"
+              data-bs-slide="next">
+        <i class="fa-solid fa-arrow-right"></i>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="reference-body">
+    <header> 
+      
+      <h1 class="reference-titre"> {{ titre }} </h1></header>
+    <section class="reference-text">
+      {{ texte }} 
+    </section>
+  </div>
+  <span class="reference-close"><i class="fas fa-times" (click)="closeModal()"></i></span>
+</div>

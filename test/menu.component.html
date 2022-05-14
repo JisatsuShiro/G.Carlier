@@ -1,0 +1,280 @@
+<div class="nav-top-container d-none"> 
+  <div class="nav-top d-flex flex-column">
+    <a href="/catalogue" [routerLink]="['catalogue']" class="side-nav__span">
+    <span class="side-nav-icon catalogue-icon">
+      <p>Catalogue</p> <i class="fa-solid fa-book-open"></i>
+    </span>
+    </a>
+    <a href="#" class="side-nav__span">
+    <span class="side-nav-icon phone-icon">
+      <p>Téléphone</p> <i class="fas fa-phone"></i>
+    </span>
+    </a>
+    <a href="https://fr.linkedin.com/company/synfolia" target="_blank" class="side-nav__span">
+    <span class="side-nav-icon linkedin-icon">
+      <p>LinkedIn</p> <i class="fab fa-linkedin fa-lg"></i>
+    </span>
+    </a>
+  </div>
+</div>
+
+<div class="nav-container">
+  <div class="navtop-container" id="navtop">
+    <div class="navbar-container" id="navbar-container">
+      <div class="compte-search-container">
+        <div class="search-container display-none-navbar">
+          <form class="d-flex">
+            <input class="form-control me-2 search-bar" type="search" placeholder="Que recherchez vous ?"
+                   aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Recherche</button>
+          </form> 
+        </div>
+        <div class="col-lg-4">
+          <a class="d-flex justify-content-center" href="#" routerLink="/">
+            <img id="logo-synfolia" class="logo-synfolia" src="./../../assets/Logo-Synfolia.svg">
+          </a>
+        </div>
+        <div class="moncompte-container d-flex justify-content-end display-none-navbar">
+
+          <a class="btn btn-notre-catalogue hover-navitem shadow-none" routerLink="/catalogue">Notre catalogue</a>
+
+          <a *ngIf="!isLoggedIn" routerLink="/login" type="button">
+            <i class="fa-solid fa-user icon-panier icon-user"></i>
+          </a>
+          <a *ngIf="isLoggedIn" routerLink="/profil" type="button">
+            <i class="fa-solid fa-user icon-panier icon-user"></i>
+          </a>
+          <a routerLink="/panier">
+            <i class="fas fa-shopping-basket icon-panier m-2 position-relative">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-green-pale">3
+                <span class="visually-hidden">Articles dans le panier</span>
+              </span>
+            </i>
+          </a>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav w-100 d-flex justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active"
+                   style="padding-left: 0"><i class="fas fa-tree green-pale"></i><i class="fas fa-home green-pale"></i></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown hover-navitem" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false"
+                   [ngClass]="{'active': groupeSynfolia.isActive || nosActus.isActive}">
+                  <img class="petale-nav" src="./../../../assets/petale-synfolia.svg">Qui sommes-nous ?
+                </a>
+                <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item petale-padding"
+                       [routerLink]="['le-groupe-synfolia']"
+                       [routerLinkActive]="['class1']"
+                       #groupeSynfolia="routerLinkActive">
+                      <img class="petale" src="./../../../assets/petale-blanche-synfolia.svg">En quelques mots
+                    </a></li>
+
+                  <li>
+                    <a class="dropdown-item petale-padding"
+                       [routerLink]="['nos-actualites']"
+                       [routerLinkActive]="['class1']"
+                       #nosActus="routerLinkActive">
+                      <img class="petale" src="./../../../assets/petale-blanche-synfolia.svg">Nos actualités
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown hover-navitem" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                  Nos pépinières
+                </a>
+                <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item petale-padding" href="http://jardin-services-vegetaux.test.ovh1.agence-11h10.fr/"><img class="petale"
+                                                                            src="./../../../assets/petale-blanche-synfolia.svg">Jardin
+                    Services Végétaux</a></li>
+                  <li><a class="dropdown-item petale-padding" href="#"><img class="petale"
+                                                                            src="./../../../assets/petale-blanche-synfolia.svg">Végétal
+                    Services</a></li>
+                  <li><a class="dropdown-item petale-padding" href="#"><img class="petale"
+                                                                            src="./../../../assets/petale-blanche-synfolia.svg">Plants
+                    Services</a></li>
+                  <li><a class="dropdown-item petale-padding" href="#"><img class="petale"
+                                                                            src="./../../../assets/petale-blanche-synfolia.svg">Pépinières
+                    des Hauts de Castets</a></li>
+                  <li><a class="dropdown-item petale-padding" href="#"><img class="petale"
+                                                                            src="./../../../assets/petale-blanche-synfolia.svg">Pépinières
+                    du Plateau de Versailles</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown hover-navitem" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false"
+                   [ngClass]="{'active': nosCompetences.isActive || guidePlantation.isActive || photo.isActive}">
+                  <img class="petale-nav" src="./../../../assets/petale-synfolia.svg">Nos compétences
+                </a>
+                <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item petale-padding"
+                       [routerLink]="['nos-competences']" fragment="culture"
+                       [routerLinkActive]="['class1']"
+                       #nosCompetences="routerLinkActive">
+                      <img class="petale" src="./../../../assets/petale-blanche-synfolia.svg">Nos méthodes de culture
+                    </a></li>
+                  <li>
+                    <a class="dropdown-item petale-padding"
+                       [routerLink]="['nos-competences']" fragment="photo"
+                       [routerLinkActive]="['class1']"
+                       #photo="routerLinkActive">
+                      <img class="petale" src="./../../../assets/petale-blanche-synfolia.svg">Nos productions en photos
+                    </a></li>
+                  <li>
+                    <a class="dropdown-item petale-padding"
+                       [routerLink]="['guide-de-plantation']"
+                       [routerLinkActive]="['class1']"
+                       #guidePlantation="routerLinkActive">
+                      <img class="petale" src="./../../../assets/petale-blanche-synfolia.svg">Guide de plantation
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover-navitem" routerLink="/nos-references" routerLinkActive="active">Nos références
+                  <img class="petale-nav" src="./../../../assets/petale-synfolia.svg">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover-navitem" routerLink="/contactez-nous" routerLinkActive="active"
+                   style="padding-right: 0">Nous
+                  contacter
+                  <img class="petale-nav" src="./../../../assets/petale-synfolia.svg">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover-navitem" routerLink="/carriere" routerLinkActive="active">Nos offres d'emploi
+                  <img class="petale-nav" src="./../../../assets/petale-synfolia.svg">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="side-nav-container">
+      <a href="#" routerLink="catalogue" class="icon-reseau">
+        <i class="fa-solid fa-book-open"></i>
+      </a>
+
+      <a href="#" class="icon-reseau">
+        <i class="fas fa-phone"></i>
+      </a>
+
+      <a href="https://fr.linkedin.com/company/synfolia" target="_blank" class="icon-reseau">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <div class="certification-synfolia display-none-navbar">
+      <a href="https://www.plantebleue.fr/" target="_blank"><img src="./../../assets/logo-plante-bleue-n2.png"></a>
+    </div>
+
+    <nav class="navbar navbar-light text-center d-lg-none" style="padding: 0 !important;">
+      <div class="container-fluid" style="padding: 0 !important;">
+        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon">
+
+          </span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+             aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./../../assets/Logo-Synfolia.svg"
+                 style="width: 40%">
+            <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+
+              <div class="moncompte-container d-flex justify-content-center mt-3">
+                <a routerLink="/login" type="button" class="btn btn-outline-dark">Mon compte</a>
+                <a routerLink="/panier" class="link-panier">
+                  <i class="fas fa-shopping-basket icon-panier m-2 position-relative" style="font-size: 1.3rem">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-green-pale">3
+                    <span class="visually-hidden">Articles dans le panier</span>
+                  </span>
+                  </i>
+                </a>
+              </div>
+
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active"
+                   style="margin-top: 20px !important;">
+                  <i class="fas fa-tree green-pale" style="font-size: 1.5rem"></i>
+                  <i class="fas fa-home green-pale" style="font-size: 1.5rem"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/catalogue" routerLinkActive="active">Notre catalogue</a>
+              </li>
+
+              <li class="nav-item dropdown nav-item-centered">
+                <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 10px !important;">
+                  Qui sommes-nous ?
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" routerLink="/le-groupe-synfolia" routerLinkActive="active"><i
+                    class="fas fa-circle bullet-menu"></i> Les
+                    pépinières Synfolia </a></li>
+                  <li><a class="dropdown-item" routerLink="/nos-actualites" routerLinkActive="active"><i
+                    class="fas fa-circle bullet-menu"></i>Nos actualités</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown nav-item-centered">
+                <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                  Nos pépinières
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-circle bullet-menu"></i>Jardin Services
+                    Végétaux</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-circle bullet-menu"></i>Végétal Services</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-circle bullet-menu"></i>Plants Services</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-circle bullet-menu"></i>Pépinières des Hauts de
+                    Castets</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-circle bullet-menu"></i>Pépinières du Plateau
+                    de Versailles</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/nos-productions" routerLinkActive="active">Nos compétences</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/nos-references" routerLinkActive="active">Nos références</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/contactez-nous" routerLinkActive="active">Nous contacter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/carriere" routerLinkActive="active">Nos offres d'emploi</a>
+              </li>
+            </ul>
+            <div class="icon-side-nav">
+              <a href="#"><i class="fa-solid fa-book-open" style="margin-left: 0"></i></a>
+              <a href="#"><i class="fas fa-newspaper"></i></a>
+              <a href="#"><i class="fas fa-phone"></i></a>
+              <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
